@@ -1,0 +1,29 @@
+<div class='container'>
+  <div class='row'>
+    <div class="col">
+
+      <h1>Burgers: </h1>
+      {{#each burger}}
+      {{#unless devoured}}
+      {{> burger name=burger_name id=id}}
+      {{/unless}}
+      {{/each}}
+
+    </div>
+    <div class="col">
+      <form method="POST" action='/add'>
+        <h1>Add Burger</h1>
+        <input type='text' name='burger_name' placeholder="Burger Name" />
+        <input type='submit' class='btn btn-primary' value='Add Burger! ' />
+      </form>
+    </div>
+    <div class="col">
+      <h1>Eaten Burgers:</h1>
+      {{#each burger}}
+      {{#if devoured}}
+      {{> burger devoured=devoured name=burger_name id=id}}
+      {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</div>

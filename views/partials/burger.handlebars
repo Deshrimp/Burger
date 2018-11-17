@@ -1,0 +1,6 @@
+<div class='burger'>
+  <h1>{{id}}. {{name}}</h1>
+  {{#unless devoured}}
+  <form action="/eat/{{id}}" method="POST"><input class='btn btn-success' value="Eat the {{name}}" type="submit" name="Eat"></input></form>
+  {{/unless}}
+</div>
